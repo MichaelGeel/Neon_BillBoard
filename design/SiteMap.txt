@@ -1,0 +1,5 @@
+1 Pager:
+
+Sections:
+-Hero(BillBoard)
+-Control Panel (Buttons)
