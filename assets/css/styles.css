@@ -1,3 +1,9 @@
+@property --myAngle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
 html, body {
     box-sizing: border-box;
     margin: 0;
@@ -10,23 +16,43 @@ body {
 }
 
 .container {
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     width: 80%;
     margin-left: 10%;
+    gap: 10vh;
 }
 
 .billboard {
-    border: 1px solid white;
     position: relative;
-    top: 100px;
     border-radius: 20px;
     height: 30vh;
+    text-align: center;
+    background-color: black;
+    color: transparent;
+}
+
+@keyframes rotateColor {
+    from {
+        background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
+    }
+    to {
+        background-image: conic-gradient(from var(--myAngle, 360)red, orange, yellow, green, blue, indigo, violet, red);
+    }
 }
 
 .billboard::after{
     content: "";
-
+    position: absolute;
+    background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    
+    animation: rotateColor 10s linear infinite;
 }
 
 .panel {
