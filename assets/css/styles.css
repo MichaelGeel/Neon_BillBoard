@@ -35,24 +35,31 @@ body {
 
 @keyframes rotateColor {
     from {
-        background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
+        --myAngle: 0deg;
     }
     to {
-        background-image: conic-gradient(from var(--myAngle, 360)red, orange, yellow, green, blue, indigo, violet, red);
+        --myAngle: 360deg;
     }
 }
 
-.billboard::after{
+.billboard::after, .billboard::before{
     content: "";
     position: absolute;
     background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
     border-radius: 20px;
+    padding: 5px;
     height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
-    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
     animation: rotateColor 10s linear infinite;
+}
+
+.billboard::before{
+    filter: blur(1.5rem);
+    opacity: 0.9;
 }
 
 .panel {
