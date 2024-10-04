@@ -24,13 +24,12 @@ body {
     gap: 10vh;
 }
 
-.billboard {
+.billboard-rgb {
     position: relative;
     border-radius: 20px;
     height: 30vh;
     text-align: center;
     background-color: black;
-    color: transparent;
 }
 
 @keyframes rotateColor {
@@ -42,7 +41,7 @@ body {
     }
 }
 
-.billboard::after, .billboard::before{
+.billboard-rgb::after, .billboard-rgb::before{
     content: "";
     position: absolute;
     background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
@@ -57,7 +56,65 @@ body {
     animation: rotateColor 10s linear infinite;
 }
 
-.billboard::before{
+.billboard-rgb::before{
+    filter: blur(1.5rem);
+    opacity: 0.9;
+}
+
+.billboard-racer {
+    position: relative;
+    border-radius: 20px;
+    height: 30vh;
+    text-align: center;
+    background-color: black;
+    color: transparent;
+}
+
+.billboard-racer::after, .billboard-racer::before{
+    content: "";
+    position: absolute;
+    background-image: conic-gradient(from var(--myAngle),transparent 0, transparent 160deg, blue 170deg, blue 180deg, transparent 180deg, transparent 340deg, blue 350deg, blue 360deg);
+    border-radius: 20px;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: rotateColor 10s linear infinite;
+}
+
+.billboard-racer::before{
+    filter: blur(1.5rem);
+    opacity: 0.9;
+}
+
+.billboard-ocean {
+    position: relative;
+    border-radius: 20px;
+    height: 30vh;
+    text-align: center;
+    background-color: black;
+    color: transparent;
+}
+
+.billboard-ocean::after, .billboard-ocean::before{
+    content: "";
+    position: absolute;
+    background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
+    border-radius: 20px;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: rotateColor 10s linear infinite;
+}
+
+.billboard-ocean::before{
     filter: blur(1.5rem);
     opacity: 0.9;
 }
