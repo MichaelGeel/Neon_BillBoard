@@ -2,6 +2,7 @@
     syntax: "<angle>";
     inherits: true;
     initial-value: 0deg;
+
 }
 
 html, body {
@@ -24,7 +25,7 @@ body {
     gap: 10vh;
 }
 
-.billboard-rgb {
+.billboard {
     position: relative;
     border-radius: 20px;
     height: 30vh;
@@ -41,80 +42,33 @@ body {
     }
 }
 
-.billboard-rgb::after, .billboard-rgb::before{
+.billboard::after, .billboard::before{
     content: "";
     position: absolute;
+    border-radius: 20px;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: rotateColor 10s linear infinite;
+}
+
+.color-spectrum::after, .color-spectrum::before{
     background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
-    border-radius: 20px;
-    padding: 5px;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    animation: rotateColor 10s linear infinite;
 }
 
-.billboard-rgb::before{
-    filter: blur(1.5rem);
-    opacity: 0.9;
+.color-racers::after, .color-racers::before{
+    background-image: conic-gradient(from var(--myAngle), transparent 0, transparent 160deg, purple 170deg, purple 180deg, transparent 180deg, transparent 340deg, purple 350deg, purple 360deg);
 }
 
-.billboard-racer {
-    position: relative;
-    border-radius: 20px;
-    height: 30vh;
-    text-align: center;
-    background-color: black;
-    color: transparent;
+.color-ocean::after, .color-ocean::before{
+    background-image: conic-gradient(from var(--myAngle), #005B96, #19A3FC, #00DFED, #38F990, #00CB5D, #005B96);
 }
 
-.billboard-racer::after, .billboard-racer::before{
-    content: "";
-    position: absolute;
-    background-image: conic-gradient(from var(--myAngle),transparent 0, transparent 160deg, blue 170deg, blue 180deg, transparent 180deg, transparent 340deg, blue 350deg, blue 360deg);
-    border-radius: 20px;
-    padding: 5px;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    animation: rotateColor 10s linear infinite;
-}
-
-.billboard-racer::before{
-    filter: blur(1.5rem);
-    opacity: 0.9;
-}
-
-.billboard-ocean {
-    position: relative;
-    border-radius: 20px;
-    height: 30vh;
-    text-align: center;
-    background-color: black;
-    color: transparent;
-}
-
-.billboard-ocean::after, .billboard-ocean::before{
-    content: "";
-    position: absolute;
-    background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
-    border-radius: 20px;
-    padding: 5px;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    animation: rotateColor 10s linear infinite;
-}
-
-.billboard-ocean::before{
+.billboard::before{
     filter: blur(1.5rem);
     opacity: 0.9;
 }
