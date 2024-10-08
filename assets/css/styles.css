@@ -90,6 +90,10 @@ body {
     margin-bottom: 15px;
     margin-right: 15px;
     position: relative;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    
 }
 
 .button::after {
@@ -103,6 +107,7 @@ body {
     top: 0%;
     left: 0%;
     z-index: -1;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .one::after{
