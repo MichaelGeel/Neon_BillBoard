@@ -80,6 +80,7 @@ body {
     border-radius: 10px;
     height: 15vh;
     background-color: gray;
+    z-index: -2;
 }
 
 .button {
@@ -88,10 +89,31 @@ body {
     border-radius: 10px;
     margin-bottom: 15px;
     margin-right: 15px;
-    box-shadow: 3px 5px 0 2px black;
     position: relative;
 }
 
 .button::after {
-
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
 }
+
+.one::after{
+    background-image: conic-gradient(from var(--myAngle), red, orange, yellow, green, blue, indigo, violet, red);
+}
+
+.two::after{
+    background-image: conic-gradient(from var(--myAngle), white 0, white 160deg, purple 170deg, purple 180deg, white 180deg, white 340deg, purple 350deg, purple 360deg);
+}
+
+.three::after{
+    background-image: conic-gradient(from var(--myAngle), #005B96, #19A3FC, #00DFED, #38F990, #00CB5D, #005B96);
+}
+
