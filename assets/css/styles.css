@@ -78,9 +78,10 @@ body {
     font-size: 5rem;
     position: relative;
     padding: 0 40px;
-    top: 10%;
-    left: 25%;
-    transform: translate(-25%, -25%);
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family:Arial, Helvetica, sans-serif
 }
 
